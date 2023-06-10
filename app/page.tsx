@@ -3,12 +3,13 @@ import data from "./data/data";
 import Input from "@/components/Input";
 import Button from "@/components/Button";
 import Heading from "@/components/Heading";
+import Form from "@/components/Form";
 
 export default function Home() {
   return (
-    <main className="bg-green-500 h-screen md:flex md:items-center md:justify-center">
-      <div className="md:flex flex-row-reverse bg-white max-w-[928px] ">
-        <div>
+    <main className="h-screen md:flex md:items-center md:justify-center ">
+      <div className="md:flex flex-row-reverse bg-white max-w-[928px] rounded-3xl md:p-6 md:gap-6">
+        <div className="md:w-1/2">
           <Image
             src="/images/illustration-sign-up-mobile.svg"
             alt="illustation"
@@ -28,12 +29,12 @@ export default function Home() {
           />
         </div>
 
-        <div className="px-6 mt-14">
+        <div className="px-6 md:px-0 mt-14 md:flex-1">
           <Heading text="Stay updated!" />
-          <p className="my-8">
+          <p className="my-8 font-medium">
             Join 60,000+ product managers receiving monthly updates on:
           </p>
-          <ul className="mb-14">
+          <ul className="mb-14 flex flex-col gap-3">
             {data.map((item) => (
               <li className="flex items-start gap-[17px]">
                 <Image
@@ -41,23 +42,14 @@ export default function Home() {
                   alt="check"
                   width={22}
                   height={22}
-                  className="just0fy-start"
+                  className="justify-start"
                 />
-                <p className="pl-[17px]">{item}</p>
+                <p className="pl-[17px] font-medium">{item}</p>
               </li>
             ))}
           </ul>
 
-          <form>
-            <Input
-              placeholder="email@company.com"
-              label="Email address"
-              type="text"
-              id="email"
-            />
-
-            <Button text="Subscribe to monthly newsletter" />
-          </form>
+          <Form />
         </div>
       </div>
     </main>
