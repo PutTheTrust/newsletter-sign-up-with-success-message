@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import data from "./data/data";
 import Input from "@/components/Input";
@@ -35,8 +37,8 @@ export default function Home() {
             Join 60,000+ product managers receiving monthly updates on:
           </p>
           <ul className="mb-14 flex flex-col gap-3">
-            {data.map((item) => (
-              <li className="flex items-start gap-[17px]">
+            {data.map((item, idx) => (
+              <li className="flex items-start gap-[17px]" key={idx}>
                 <Image
                   src="/images/icon-list.svg"
                   alt="check"

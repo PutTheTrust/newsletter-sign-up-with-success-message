@@ -4,7 +4,7 @@ import { createContext, useContext, useState } from "react";
 
 const EmailContext = createContext({});
 
-export const EmailContextProvider = ({ children }: any) => {
+export const EmailContextProvider = ({ children }) => {
   const [email, setEmail] = useState("");
 
   return (

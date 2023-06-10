@@ -6,10 +6,10 @@ import Button from "./Button";
 import { useRouter } from "next/navigation";
 import { useEmailContext } from "@/context/context";
 
-const Form = () => {
+function Form() {
   const [text, setText] = useState("");
   const [error, setError] = useState(true);
-  const { setEmail } = useEmailContext();
+  const [setEmail] = useEmailContext();
   const router = useRouter();
 
   const validateEmail = () => {
@@ -38,6 +38,6 @@ const Form = () => {
       <Button onClick={validateEmail} text="Subscribe to monthly newsletter" />
     </div>
   );
-};
+}
 
 export default Form;

@@ -6,7 +6,7 @@ import { useEmailContext } from "@/context/context";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
-const page = () => {
+function page() {
   const { email } = useEmailContext();
   const router = useRouter();
   const dismiss = () => {
@@ -40,6 +40,6 @@ const page = () => {
       </div>
     </div>
   );
-};
+}
 
 export default page;
