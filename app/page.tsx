@@ -2,6 +2,7 @@ import Image from "next/image";
 import data from "./data/data";
 import Input from "@/components/Input";
 import Button from "@/components/Button";
+import Heading from "@/components/Heading";
 
 export default function Home() {
   return (
@@ -17,10 +18,12 @@ export default function Home() {
         />
       </div>
 
-      <div className="px-6">
-        <h1>Stay updated!</h1>
-        <p>Join 60,000+ product managers receiving monthly updates on:</p>
-        <ul>
+      <div className="px-6 mt-14">
+        <Heading text="Stay updated!" />
+        <p className="my-8">
+          Join 60,000+ product managers receiving monthly updates on:
+        </p>
+        <ul className="mb-14">
           {data.map((item) => (
             <li className="flex items-start gap-[17px]">
               <Image
