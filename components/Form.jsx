@@ -9,7 +9,7 @@ import { useEmailContext } from "@/context/context";
 function Form() {
   const [text, setText] = useState("");
   const [error, setError] = useState(true);
-  const [setEmail] = useEmailContext();
+  const { setEmail } = useEmailContext();
   const router = useRouter();
 
   const validateEmail = () => {
