@@ -1,3 +1,4 @@
+import { EmailContextProvider } from "@/context/context";
 import "./globals.css";
 import { Inter } from "next/font/google";
 
@@ -15,7 +16,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="md:bg-charcoal-grey">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <EmailContextProvider>{children}</EmailContextProvider>
+      </body>
     </html>
   );
 }

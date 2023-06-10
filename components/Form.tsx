@@ -1,18 +1,26 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import Input from "./Input";
 import Button from "./Button";
+import { useRouter } from "next/navigation";
+import { useEmailContext } from "@/context/context";
 
 const Form = () => {
   const [text, setText] = useState("");
-  const [error, setError] = useState(false);
+  const [error, setError] = useState(true);
+  const { setEmail } = useEmailContext();
+  const router = useRouter();
 
   const validateEmail = () => {
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     const errorStatus = emailPattern.test(text);
     setError(errorStatus);
-    console.log(errorStatus);
+    setEmail(text);
+    // console.log(errorStatus);
+    if (errorStatus) {
+      router.push("/confirmation");
+    }
   };
 
   return (
